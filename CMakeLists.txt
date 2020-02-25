@@ -1,13 +1,13 @@
 cmake_minimum_required (VERSION 3.7)
 
-set(DEVELOPMENT_PROJECT_NAME "project")                     # <== Set to your project name, e.g. project.xcodeproj
+set(DEVELOPMENT_PROJECT_NAME "awtk")                     # <== Set to your project name, e.g. project.xcodeproj
 set(DEVELOPMENT_TEAM_ID "AAAAAAAAAA")                       # <== Set to your team ID from Apple
-set(APP_NAME "YOURAPP")                                     # <== Set To your app's name
-set(APP_BUNDLE_IDENTIFIER "com.company.app")                # <== Set to your app's bundle identifier
+set(APP_NAME "awtk_app")                                     # <== Set To your app's name
+set(APP_BUNDLE_IDENTIFIER "com.zlgopen.app")                # <== Set to your app's bundle identifier
 set(FRAMEWORK_NAME "FooBar")                                # <== Set to your framework's name
-set(FRAMEWORK_BUNDLE_IDENTIFIER "com.company.framework")    # <== Set to your framework's bundle identifier (cannot be the same as app bundle identifier)
+set(FRAMEWORK_BUNDLE_IDENTIFIER "com.zlgopen.framework")    # <== Set to your framework's bundle identifier (cannot be the same as app bundle identifier)
 set(TEST_NAME "Tests")                                      # <== Set to your test's name
-set(TEST_BUNDLE_IDENTIFIER "com.company.tests")             # <== Set to your tests's bundle ID
+set(TEST_BUNDLE_IDENTIFIER "com.zlgopen.tests")             # <== Set to your tests's bundle ID
 set(CODE_SIGN_IDENTITY "iPhone Developer")                  # <== Set to your preferred code sign identity, to see list:
                                                             # /usr/bin/env xcrun security find-identity -v -p codesigning
 set(DEPLOYMENT_TARGET 8.0)                                  # <== Set your deployment target version of iOS
@@ -40,16 +40,15 @@ set(APP_HEADER_FILES
   ./Prefix.pch
 )
 
+include(awtk_assets.mk)
+include(awtk_source.mk)
+
 set(APP_SOURCE_FILES
   ./AppDelegate.m
   ./ViewController.m
   ./CppInterface.mm
   ./main.m
-)
-
-set(RESOURCES
-  ./Main.storyboard
-  ./LaunchScreen.storyboard
+  ${AWTK_ALL_SOURCE}
 )
 
 add_executable(
@@ -59,6 +58,9 @@ add_executable(
     ${APP_SOURCE_FILES}
     ${RESOURCES}
 )
+
+include(awtk_properties.mk)
+include(awtk_frameworks.mk)
 
 # To disable bitcode:
 # set_target_properties(${APP_NAME} PROPERTIES XCODE_ATTRIBUTE_ENABLE_BITCODE "NO")
