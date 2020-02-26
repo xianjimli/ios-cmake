@@ -1,4 +1,5 @@
 set(RESOURCES
+Main.storyboard
 ./assets/default/raw/ui/label.bin
 ./assets/default/raw/ui/menu_left_bottom.bin
 ./assets/default/raw/ui/image_value.bin

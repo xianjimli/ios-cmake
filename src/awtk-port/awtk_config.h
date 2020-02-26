@@ -2,7 +2,7 @@
 #define AWTK_CONFIG_H
 
 #ifndef IOS
-#define IOS 1 
+#define IOS 1
 #endif/*IOS*/
 
 #ifndef APPLE
