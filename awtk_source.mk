@@ -44,6 +44,7 @@ file(GLOB SDL_SOURCE_FILES
 file(GLOB AWTK_SOURCE_FILES
 	${AWTK_SOURCE_DIR}/3rd/libunibreak/*.c
 	${AWTK_SOURCE_DIR}/3rd/nanovg/base/*.c
+	${AWTK_SOURCE_DIR}/3rd/miniz/*.c
 	${AWTK_SOURCE_DIR}/src/tkc/*.c
 	${AWTK_SOURCE_DIR}/src/base/*.c
 	${AWTK_SOURCE_DIR}/src/layouters/*.c

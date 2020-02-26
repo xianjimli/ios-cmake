@@ -9,6 +9,10 @@
 #define APPLE 1 
 #endif/*APPLE*/
 
+#ifndef WITH_MINIZ
+#define WITH_MINIZ 1 
+#endif/*WITH_MINIZ*/
+
 #ifndef MOBILE_APP
 #define MOBILE_APP 1 
 #endif/*MOBILE_APP*/
